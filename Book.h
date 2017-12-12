@@ -4,10 +4,10 @@
 #include <iostream>
 #include <string>
 using namespace std ;
+enum Target{TOUS, JEUNESSE, FEMININ, MASCULIN};
+
 
 class Book{
-public:
-    enum Target{TOUS, JEUNESSE, FEMININ, MASCULIN};
 protected:
     static unsigned book_id;
     string author;
@@ -32,6 +32,7 @@ public:
     }
     void affiche();
     void is_available();
+    string detarget();
 
 
 

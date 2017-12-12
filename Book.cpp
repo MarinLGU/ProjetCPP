@@ -18,8 +18,13 @@ Book::Book(string author, string title, string editor, string isbn, Target targe
 
 }
 
+string Book::detarget() {
+    string table[]={"Tous","Jeunesse","Feminin","Masculin"};
+    return table[target];
+}
+
 void Book::affiche() {
-    cout<<"auteur :"<<author<<" titre :"<<title<<" public :"<<target<<" état"<<state<<" book_id= "<<book_id <<endl;
+    cout<<"auteur :"<<author<<" titre :"<<title<<" public :"<<detarget()<<" état"<<state<<" book_id= "<<book_id <<endl;
 }
 
 void Book::is_available() {

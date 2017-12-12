@@ -5,6 +5,8 @@
 #ifndef PROJET_POETRY_H
 #define PROJET_POETRY_H
 #include "Book.h"
+
+
 class Poetry : public Book{
 protected:
     string indic;
