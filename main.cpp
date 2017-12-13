@@ -2,12 +2,13 @@
 #include "Book.h"
 #include "Comic.h"
 #include "Poetry.h"
+#include "Novel.h"
 
 int main() {
-    Book B1=Book("Victor Hugo", "Les Misérables", "Folio Classique","9792070409228",TOUS, "1");
+    Novel B1=Novel("Victor Hugo", "Les Misérables", "Folio Classique","9792070409228", TOUS,"2",Litterature);
     B1.affiche();
     B1.is_available();
-    Book B2=Book("Stendhal", "Le Rouge et le Noir", "Folio Classique", "9792070412396", TOUS,"2",1);
+    Novel B2=Novel("Stendhal", "Le Rouge et le Noir", "Folio Classique", "9792070412396", TOUS,"2",Litterature);
     B2.affiche();
     B2.set_state(0);
     B2.is_available();
