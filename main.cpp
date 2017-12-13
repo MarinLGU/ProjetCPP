@@ -3,6 +3,7 @@
 #include "Comic.h"
 #include "Poetry.h"
 #include "Novel.h"
+#include "Drama.h"
 
 int main() {
     Novel B1=Novel("Victor Hugo", "Les Misérables", "Folio Classique","9792070409228", TOUS,"2",Litterature);
@@ -16,5 +17,8 @@ int main() {
     B3.affiche();
     Poetry B4=Poetry("Baudelaire","Les Fleurs du Mal", "Folio Classique", "2070466655",TOUS, "1",PROSE);
     B4.affiche();
+    Drama B5=Drama("Eschyle","Les Perses","Belles Lettres","2251799567",TOUS,"3",AV_IV);
+    B5.affiche();
+
     return 0;
 }
