@@ -6,6 +6,7 @@
 #define PROJETCPP_LIBRARY_H
 #include <iostream>
 #include <string>
+#include <vector>
 #include "Book.h"
 
 using namespace std ;
@@ -16,19 +17,21 @@ protected:
     string name;
     string adress;
     static unsigned lib_id;
-    Book book_list[];
+    vector<Book*> book_list;
 
 public:
-    Library(string name, string adress, Book book_list[]={});
+    Library(string name, string adress);
     string get_name(){ return name ;}
     string get_adress(){ return adress ;}
     static unsigned get_lib_id(){ return lib_id ;}
-    Book get_book_list(){ return *book_list;}
-    string ask_book(string isbn, static unsigned lib_id); /*retourne "le livre a été ajouté" ou "le
+    vector<Book*> get_book_list(){ return book_list;}
+    bool book_in_lib(string isbn, Library L);
+    void ask_book(string isbn, Library L); /*retourne "le livre a été ajouté" ou "le
     livre est indisponible dans la bibliothèque indiquée" après avoir ajouté ou pas le livre*/
     void buy_book(Book book);
-    void delete_book(static unsigned book_id);
-    void send_back(static unsigned book_id);
+    void delete_book(Book book);
+    void print_book_list();
+    void send_back(Book book);
 
 
 
