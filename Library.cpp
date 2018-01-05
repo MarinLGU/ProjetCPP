@@ -3,13 +3,17 @@
 //
 // Created by marin on 13/12/17.
 //
-unsigned Library::lib_id=0;
+int compteur_lib=0;
+void presenter(Book &b) {
+    b.affiche();
+}
 
 Library::Library(string name, string adress) {
     this->name=name;
     this->adress=adress;
     this->book_list={};
-    this->lib_id=++lib_id;
+    ++compteur_lib;
+    this->lib_id=compteur_lib;
 }
 
 bool Library::book_in_lib(string isbn, Library L) {
@@ -20,19 +24,17 @@ bool Library::book_in_lib(string isbn, Library L) {
     return indic;
 }
 
-void Library::buy_book(Book book) {
+void Library::buy_book(Book* book) {
 
-    book_list.push_back(&book);
+    book_list.push_back(book);
 }
 
-void Library::delete_book(Book book) {
-    int indic=0;
-    int i;
-    for(i=0 ; book_list.size() ; i++){
-        Book b=*book_list[i];
-        if(b.get_book_id()==book.get_book_id()) indic=i;
-    }
+void Library::delete_book(Book* book) {
+    //book_list.erase(remove(book_list.begin(), book_list.end(),book),book_list.end());
+    int i=0;
+    while(book->get_book_id() != book_list[i]->get_book_id()) i++;
     book_list.erase(book_list.begin()+i);
+    //book_list.pop_back();
 }
 
 
@@ -40,16 +42,16 @@ void Library::ask_book(string isbn, Library L) {
     int i=0;
     if(book_in_lib(isbn, L)){
         while(L.book_list[i]->get_isbn()!=isbn) i=i+1;
-        buy_book(*L.book_list[i]);
-        L.delete_book(*L.book_list[i]);
+        buy_book(L.book_list[i]);
+        L.delete_book(L.book_list[i]);
         cout<<"Le livre a été transféré"<<endl;
     }
 
 }
 
 void Library::print_book_list() {
-    for(Book* book : book_list){
-        book->affiche();
-    }
+    int i;
+    for(i=0; i<=book_list.size();i++)
+        book_list[i]->affiche();
 
 }

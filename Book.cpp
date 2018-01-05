@@ -3,7 +3,7 @@
 //
 #include "Book.h"
 
-unsigned Book::book_id=0;
+int compteur_book=0;
 
 
 Book::Book(string author, string title, string editor, string isbn, Target target, string lib_id, bool state){
@@ -13,7 +13,8 @@ Book::Book(string author, string title, string editor, string isbn, Target targe
     this->isbn=isbn;
     this->target=target;
     this->state=state;
-    this->book_id=++book_id;
+    ++compteur_book;
+    this->book_id=compteur_book;
     this->lib_id=lib_id;
 
 }
@@ -35,3 +36,4 @@ void Book::is_available() {
         cout<<"le livre est indisponible"<<endl;
 
 }
+

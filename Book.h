@@ -7,9 +7,10 @@ using namespace std ;
 enum Target{TOUS, JEUNESSE, FEMININ, MASCULIN};
 
 
+
 class Book{
 protected:
-    static unsigned book_id;
+    int book_id;
     string author;
     string title;
     string editor;
@@ -19,7 +20,7 @@ protected:
     string lib_id;
 public:
     Book(string author, string title, string editor, string isbn, Target target, string lib_id, bool state=1);
-    static unsigned get_book_id(){ return book_id;}
+    int get_book_id(){ return book_id;}
     string get_author(){ return  author;}
     string get_lib_id(){ return lib_id;}
     string get_title(){ return title;}
@@ -30,13 +31,10 @@ public:
     void set_state(bool state){
         this->state=state;
     }
-    void affiche();
+
+    virtual void affiche();
     void is_available();
     string detarget();
-
-
-
-
 
 };
 
