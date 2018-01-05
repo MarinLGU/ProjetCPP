@@ -10,7 +10,7 @@ protected:
     string drawer;
 
 public:
-    Comic(string author, string title, string editor, string isbn, Target target, string lib_id, string drawer, bool state=1);
+    Comic(string author, string title, string editor, string isbn, Target target, string drawer, bool state=1);
     string get_drawer(){ return drawer;}
     void affiche();
 };

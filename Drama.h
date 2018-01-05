@@ -13,7 +13,7 @@ protected:
     century siecle;
 
 public:
-    Drama(string author, string title, string editor, string isbn, Target target, string lib_id, century siecle, bool state=1);
+    Drama(string author, string title, string editor, string isbn, Target target, century siecle, bool state=1);
     century get_siecle(){ return siecle;}
     string decentury();
     void affiche();

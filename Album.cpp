@@ -4,8 +4,8 @@
 
 #include "Album.h"
 
-Album::Album(string author, string title, string editor, string isbn, Target target, string lib_id, illustration type,
-               bool state):Book(author,title,editor,isbn,target,lib_id,state){
+Album::Album(string author, string title, string editor, string isbn, Target target,  illustration type,
+               bool state):Book(author,title,editor,isbn,target,state){
     this->type=type;
 }
 

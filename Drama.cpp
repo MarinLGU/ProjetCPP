@@ -3,8 +3,8 @@
 //
 #include "Drama.h"
 
-Drama::Drama(string author, string title, string editor, string isbn, Target target, string lib_id, century siecle,
-             bool state):Book(author,title,editor,isbn,target,lib_id,state){
+Drama::Drama(string author, string title, string editor, string isbn, Target target, century siecle,
+             bool state):Book(author,title,editor,isbn,target,state){
     this->siecle=siecle;
 }
 

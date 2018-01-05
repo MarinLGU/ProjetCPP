@@ -32,6 +32,7 @@ public:
     void buy_book(Book* book);
     void delete_book(Book* book);
     void print_book_list();
+    void get_book(Book* book);
     void send_back(Book book);
 
 

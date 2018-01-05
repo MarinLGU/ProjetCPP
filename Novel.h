@@ -18,7 +18,7 @@ protected:
     genre type;
 
 public:
-    Novel(string author, string title, string editor, string isbn, Target target, string lib_id, genre indic, bool state=1);
+    Novel(string author, string title, string editor, string isbn, Target target,  genre indic, bool state=1);
     genre get_type(){ return type;}
     string detype();
     void affiche();

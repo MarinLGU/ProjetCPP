@@ -4,8 +4,8 @@
 
 #include "Novel.h"
 
-Novel::Novel(string author, string title, string editor, string isbn, Target target, string lib_id, genre type,
-             bool state):Book(author,title,editor,isbn,target,lib_id,state){
+Novel::Novel(string author, string title, string editor, string isbn, Target target,  genre type,
+             bool state):Book(author,title,editor,isbn,target,state){
     this->type=type;
 }
 

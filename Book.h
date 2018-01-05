@@ -17,12 +17,12 @@ protected:
     string isbn;
     Target target;
     bool state ; //1 si disponible 0 sinon
-    string lib_id;
+    int lib_id;
 public:
-    Book(string author, string title, string editor, string isbn, Target target, string lib_id, bool state=1);
+    Book(string author, string title, string editor, string isbn, Target target,  bool state=1);
     int get_book_id(){ return book_id;}
     string get_author(){ return  author;}
-    string get_lib_id(){ return lib_id;}
+    int get_lib_id(){ return lib_id;}
     string get_title(){ return title;}
     string get_editor(){ return editor;}
     string get_isbn(){ return isbn ;}
@@ -30,6 +30,9 @@ public:
     bool get_state(){ return state ;}
     void set_state(bool state){
         this->state=state;
+    }
+    void set_lib_id(int lib_id){
+        this->lib_id=lib_id;
     }
 
     virtual void affiche();

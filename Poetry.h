@@ -13,7 +13,7 @@ protected:
     type indic;
 
 public:
-    Poetry(string author, string title, string editor, string isbn, Target target, string lib_id, type indic, bool state=1);
+    Poetry(string author, string title, string editor, string isbn, Target target, type indic, bool state=1);
     type get_indic(){ return indic;}
     string detype();
     void affiche();

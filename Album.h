@@ -13,7 +13,7 @@ protected:
     illustration type;
 
 public:
-    Album(string author, string title, string editor, string isbn, Target target, string lib_id, illustration type, bool state=1);
+    Album(string author, string title, string editor, string isbn, Target target,  illustration type, bool state=1);
     illustration get_illustation(){ return type;}
     string deillustration();
     void affiche();

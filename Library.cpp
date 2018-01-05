@@ -16,6 +16,7 @@ Library::Library(string name, string adress) {
     this->lib_id=compteur_lib;
 }
 
+
 bool Library::book_in_lib(string isbn, Library L) {
     bool indic=0;
     for(Book* book : L.book_list){
@@ -27,6 +28,7 @@ bool Library::book_in_lib(string isbn, Library L) {
 void Library::buy_book(Book* book) {
 
     book_list.push_back(book);
+    book->set_lib_id(lib_id);
 }
 
 void Library::delete_book(Book* book) {
@@ -42,7 +44,7 @@ void Library::ask_book(string isbn, Library L) {
     int i=0;
     if(book_in_lib(isbn, L)){
         while(L.book_list[i]->get_isbn()!=isbn) i=i+1;
-        buy_book(L.book_list[i]);
+        get_book(L.book_list[i]);
         L.delete_book(L.book_list[i]);
         cout<<"Le livre a été transféré"<<endl;
     }
@@ -50,8 +52,19 @@ void Library::ask_book(string isbn, Library L) {
 }
 
 void Library::print_book_list() {
-    int i;
-    for(i=0; i<=book_list.size();i++)
-        book_list[i]->affiche();
+    for(Book* book:book_list){
+        book->affiche();
+    }}
+
+void Library::get_book(Book *book) {
+    book_list.push_back(book);
+}
+
+Library get_lib_from_id(int id){
+
+
+}
+
+void Library::send_back(Book book) {
 
 }

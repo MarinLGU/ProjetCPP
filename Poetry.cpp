@@ -3,8 +3,8 @@
 //
 // Created by marin on 12/12/17.
 //
-Poetry::Poetry(string author, string title, string editor, string isbn, Target target, string lib_id, type indic,
-               bool state):Book(author,title,editor,isbn,target,lib_id,state){
+Poetry::Poetry(string author, string title, string editor, string isbn, Target target, type indic,
+               bool state):Book(author,title,editor,isbn,target,state){
     this->indic=indic;
 }
 
