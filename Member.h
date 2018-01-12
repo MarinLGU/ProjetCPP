@@ -8,29 +8,31 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include "Book.h"
+#include "Library.h"
 using namespace std ;
 
 class Member {
 protected :
-    static unsigned member_id;
+    int member_id;
     string lastname;
     string firstname;
     string adress;
-    string lib;
-    vector<int> detained_books;
+    Library* lib;
+    vector<Book*> detained_books;
     int nb_allowed;
 public:
-    Member(string lastname, string firstname, string adress, string lib, vector<int> detained_books, int nb_allowed);
-    static unsigned get_member_id() { return member_id; }
+    Member(string lastname, string firstname, string adress, Library* L, int nb_allowed);
+    int get_member_id() { return member_id; }
     string get_lastname() { return lastname; }
     void set_lastname(string new_lastname) { lastname = new_lastname; }
     string get_firstname() { return firstname; }
     void set_firstname(string new_firstname) { firstname = new_firstname; }
     string get_adress() { return adress; }
     void set_adress(string new_adress) { adress = new_adress; }
-    string get_lib() { return lib; }
-    void set_lib(int lib_id) { lib = lib_id; }
-    vector<int> get_detained_books() { return detained_books; }
+    string get_lib() { return lib->get_name(); }
+    void set_lib(Library* L) { lib = L; }
+    vector<Book*> get_detained_books() { return detained_books; }
     int get_nb_allowed() { return nb_allowed; }
     void affiche();
     void borrow_book(int book_id);

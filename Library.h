@@ -33,7 +33,8 @@ public:
     void delete_book(Book* book);
     void print_book_list();
     void get_book(Book* book);
-    void send_back(Book book);
+    void send_back(Book* book, Library L);
+    bool book_id_in_lib(int book_id);
 
 
 

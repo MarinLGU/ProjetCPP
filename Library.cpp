@@ -65,6 +65,30 @@ Library get_lib_from_id(int id){
 
 }
 
-void Library::send_back(Book book) {
+void Library::send_back(Book* book, Library L) {
+    if(book->get_lib_id()!=L.lib_id){
+        cout<<"Le livre n'appartient pas à la biblitothèque demandée, essayez une autre"<<endl;
+    }
+    else{
+        if(book->get_state()==0){
+            cout<<"Le livre est emprunté, revenez plus tard"<<endl;
+        }
+        else{
+            L.get_book(book);
+            delete_book(book);
+            cout<<"Le livre a été rendu"<<endl;
+        }
+    }
 
 }
+
+bool Library::book_id_in_lib(int book_id) {
+    bool a=0;
+    for(Book* book:book_list){
+        if(book->get_book_id()==book_id){
+            a=1;
+        }
+    }
+    return a;
+}
+

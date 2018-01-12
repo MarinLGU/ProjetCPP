@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+
 using namespace std ;
 enum Target{TOUS, JEUNESSE, FEMININ, MASCULIN};
 
