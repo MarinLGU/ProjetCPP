@@ -52,10 +52,25 @@ void Member::borrow_book(int book_id) {
     }
 };
 
+bool Member::is_book_detained(int book_id) {
+    bool r=0;
+    for(Book* book:detained_books){
+        if(book->get_book_id()==book_id){
+            r=1;
+        }
+    }
+    return r;
+}
 void Member::return_book(int book_id) {
     int i=0;
-    while(book_id != detained_books[i]->get_book_id()) i++;
-    detained_books[i]->set_state(1);
-    detained_books.erase(detained_books.begin()+i);
-    nb_allowed++;
+    if(is_book_detained(book_id)){
+        while(book_id != detained_books[i]->get_book_id()) i++;
+        detained_books[i]->set_state(1);
+        detained_books.erase(detained_books.begin()+i);
+        nb_allowed++;
+    }
+    else{
+        cout<<"Ce livre ne fait pas parti des livres empruntés par l'usager"<<endl;
+    }
+
 };

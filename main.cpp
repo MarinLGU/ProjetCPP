@@ -31,9 +31,9 @@ int main() {
     L1->print_book_list();
     Member M1=Member("Ledar", "Thomas", "117 boulevard de la Libération",L1,5);
     M1.set_firstname("Lucas");
-    M1.borrow_book(219);
+    M1.borrow_book(4);
     M1.borrow_book(1200);
-    M1.return_book(10);
+    M1.return_book(40);
 
 
     return 0;

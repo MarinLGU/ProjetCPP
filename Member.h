@@ -36,6 +36,7 @@ public:
     int get_nb_allowed() { return nb_allowed; }
     void affiche();
     void borrow_book(int book_id);
+    bool is_book_detained(int book_id);
     void return_book(int book_id);
 
 };
